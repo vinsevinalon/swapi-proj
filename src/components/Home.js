@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Home() {
     return (
-        <Container fluid>
+        <Container>
         <Row>
             <Col>
                 <h2>

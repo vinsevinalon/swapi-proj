@@ -3,8 +3,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 export default function People({ data }) {
     return (
-    <Container>
-        <Row>
+        <Container>
             <Col>
             <Row xs={1} md={4} className="g-4">
                 { data.map((people, i) => (
@@ -28,7 +27,6 @@ export default function People({ data }) {
                 )) }
                 </Row>
             </Col>
-        </Row>
-    </Container>
+        </Container>
     )
 }
