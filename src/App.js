@@ -7,9 +7,8 @@ import People from './components/People';
 import Planets from './components/Planets';
 
 function App() {
-	const [ people, setPeople ] = useState([]);
+	const [ people, setPeople ] = useState([4]);
 	const [ planets, setPlanets ] = useState([]);
-	const [ loading,setLoading ] =useState([]);
 	
 	useEffect(() => {
 		async function fetchPeople() {
