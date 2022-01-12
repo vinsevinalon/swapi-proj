@@ -31,8 +31,8 @@ function App() {
 		<Routes>
 			<Route path="/" element={<Menu />}>
 				<Route index element={<Home />} />
-				<Route path="people" element={<People />} />
-				<Route path="planets" element={<Planets />} />
+				<Route path="people" element={<People data={people} />} />
+				<Route path="planets" element={<Planets data={planets} />} />
 			</Route>
 		</Routes>
 
