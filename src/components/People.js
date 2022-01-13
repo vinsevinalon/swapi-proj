@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Pagination  from './Pagination';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Accordion } from 'react-bootstrap';
 
 
 export default function People({ data }) {
@@ -14,11 +14,12 @@ export default function People({ data }) {
   
 	// Change page
 	const paginate = pageNumber => setCurrentPage(pageNumber);
+    
 
     return (
         <Container>
             <Col>
-            <Row xs={1} md={4} className="g-4">
+            <Row xs={1} md={5} className="g-4">
                 { currentPosts.map((people, i) => (
                     <Col key={i}>
                     <Card>
@@ -26,13 +27,25 @@ export default function People({ data }) {
                         <Card.Title>{people.name}</Card.Title>
                             <Card.Subtitle>Height</Card.Subtitle>
                             <Card.Text>{people.height}</Card.Text>
-                            <Card.Subtitle>Mass</Card.Subtitle>
-                            <Card.Text>{people.mass}</Card.Text>
-                            <Card.Subtitle>Hair Color</Card.Subtitle>
-                            <Card.Text>{people.hair_color}</Card.Text>
                             <Card.Subtitle>Gender</Card.Subtitle>
                             <Card.Text>{people.gender}</Card.Text>
-                    
+                            <Card.Subtitle>Birth Year</Card.Subtitle>
+                            <Card.Text>{people.birth_year}</Card.Text>
+                            <Card.Subtitle>Mass</Card.Subtitle>
+                            <Card.Text>{people.mass}</Card.Text>
+                            <Accordion>
+                                <Accordion.Item eventKey="0">
+                                <Accordion.Header>More details</Accordion.Header>
+                                <Accordion.Body>
+                                    <Card.Subtitle>Hair Color</Card.Subtitle>
+                                    <Card.Text>{people.hair_color}</Card.Text>
+                                    <Card.Subtitle>Skin Color</Card.Subtitle>
+                                    <Card.Text>{people.skin_color}</Card.Text>
+                                    <Card.Subtitle>Eye Color</Card.Subtitle>
+                                    <Card.Text>{people.eye_color}</Card.Text>
+                                </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
                         </Card.Body>
                     </Card>
                     </Col>
