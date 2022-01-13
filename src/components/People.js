@@ -11,16 +11,16 @@ export default function People({ data }) {
                     <Card>
                         <Card.Body>
                         <Card.Title>{people.name}</Card.Title>
-                        <Card.Text>
-                            <strong>Height</strong>
-                            <p>{people.height}</p>
-                            <strong>Mass</strong>
-                            <p>{people.mass}</p>
-                            <strong>Hair Color</strong>
-                            <p>{people.hair_color}</p>
-                            <strong>Gender</strong>
-                            <p>{people.gender}</p>
-                        </Card.Text>
+
+                            <Card.Subtitle>Height</Card.Subtitle>
+                            <Card.Text>{people.height}</Card.Text>
+                            <Card.Subtitle>Mass</Card.Subtitle>
+                            <Card.Text>{people.mass}</Card.Text>
+                            <Card.Subtitle>Hair Color</Card.Subtitle>
+                            <Card.Text>{people.hair_color}</Card.Text>
+                            <Card.Subtitle>Gender</Card.Subtitle>
+                            <Card.Text>{people.gender}</Card.Text>
+                    
                         </Card.Body>
                     </Card>
                     </Col>

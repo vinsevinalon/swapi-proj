@@ -12,16 +12,14 @@ export default function Planets({ data }) {
                     <Card>
                         <Card.Body>
                         <Card.Title>{planets.name}</Card.Title>
-                        <Card.Text>
-                            <strong>Rotation Period</strong>
-                            <p>{planets.rotation_period}</p>
-                            <strong>Orbital Period</strong>
-                            <p>{planets.orbital_period}</p>
-                            <strong>Diameter</strong>
-                            <p>{planets.diameter}</p>
-                            <strong>Gravity</strong>
-                            <p>{planets.gravity}</p>
-                        </Card.Text>
+                            <Card.Subtitle>Rotation Period</Card.Subtitle>
+                            <Card.Text>{planets.rotation_period}</Card.Text>
+                            <Card.Subtitle>Orbital Period</Card.Subtitle>
+                            <Card.Text>{planets.orbital_period}</Card.Text>
+                            <Card.Subtitle>Diameter</Card.Subtitle>
+                            <Card.Text>{planets.diameter}</Card.Text>
+                            <Card.Subtitle>Gravity</Card.Subtitle>
+                            <Card.Text>{planets.gravity}</Card.Text>
                         </Card.Body>
                     </Card>
                     </Col>

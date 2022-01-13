@@ -7,8 +7,11 @@ import People from './components/People';
 import Planets from './components/Planets';
 
 function App() {
-	const [ people, setPeople ] = useState([4]);
+	const [ people, setPeople ] = useState([]);
 	const [ planets, setPlanets ] = useState([]);
+	const [ currentPage, setCurrentPage ] = useState(1);
+	const [ postsPerPage ] = useState(5);
+
 	
 	useEffect(() => {
 		async function fetchPeople() {
@@ -25,12 +28,22 @@ function App() {
 		fetchPeople();
 		fetchPlanets();
 	}, [])
+
+	const indexOfLastPost = currentPage * postsPerPage;
+	const indexOfFirstPost = indexOfLastPost - postsPerPage;
+	const currentPosts = people.slice(indexOfFirstPost, indexOfLastPost);
+  
+	// Change page
+	const paginate = pageNumber => setCurrentPage(pageNumber);
+
 	return (
 	<>
 		<Routes>
 			<Route path="/" element={<Menu />}>
 				<Route index element={<Home />} />
-				<Route path="people" element={<People data={people} />} />
+				<Route path="people" element={
+					<People data={currentPosts} />
+				} />
 				<Route path="planets" element={<Planets data={planets} />} />
 			</Route>
 		</Routes>
