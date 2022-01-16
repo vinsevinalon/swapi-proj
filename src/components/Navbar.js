@@ -19,6 +19,7 @@ export default function Menu() {
 					<Nav.Link as={Link} to="/">Home</Nav.Link>
 					<Nav.Link as={Link} to="/people">People</Nav.Link>
 					<Nav.Link as={Link} to="/planets">Planets</Nav.Link>
+					<Nav.Link as={Link} to="/starships">Starships</Nav.Link>
 				</Nav>
 				</Navbar.Collapse>
 			</Container>

@@ -6,8 +6,11 @@ import { Container, Row, Col, Card, Accordion, Nav } from 'react-bootstrap';
 
 
 export default function People({ data }) {
+    const allGender = ['All', ...new Set(data.map(data => data.gender))];
+    const [ people, setPeople ] = useState([]);
     const [ currentPage, setCurrentPage ] = useState(1);
 	const [ postsPerPage ] = useState(5);
+    const [ buttons, setButtons ] = useState(allGender);
 
     //Get current posts.
 	const indexOfLastPost = currentPage * postsPerPage;
@@ -16,15 +19,29 @@ export default function People({ data }) {
   
 	// Change page
 	const paginate = pageNumber => setCurrentPage(pageNumber);
+
+    const filter = (button) => {
+        if(button === 'All') {
+            setPeople(data);
+            return;
+        }
+
+        const filteredData = data.filter(people => data.gender === button)
+        setPeople(filteredData);
+    }
     
 
     return (
         <Container>
             <h2>People</h2>
             <Col>
-            <Filter />
+            <Filter button={buttons} filter={filter}/>
             <Row xs={1} md={4} className="g-4">
-                { currentPosts.map((people, i) => (
+                { currentPosts.
+                    filter(
+                        (people) => 
+                        people.gender)
+                    .map((people, i) => (
                     <Col key={i}>
                     <Card>
                         <Card.Body>

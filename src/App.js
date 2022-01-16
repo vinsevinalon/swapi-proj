@@ -6,10 +6,12 @@ import Home from './components/Home';
 import People from './components/People';
 import Details from './components/Details';
 import Planets from './components/Planets';
+import Starships from './components/Starships';
 
 function App() {
 	const [ people, setPeople ] = useState([]);
 	const [ planets, setPlanets ] = useState([]);
+	const [ starships, setStarships] = useState([]);
 
 	
 	useEffect(() => {
@@ -24,8 +26,16 @@ function App() {
 			let data = await res.json();
 			setPlanets(data.results);
 		}
+
+		async function fetchStarships() {
+			let res = await fetch('https://swapi.py4e.com/api/starships');
+			let data = await res.json();
+			setStarships(data.results);
+		}
+
 		fetchPeople();
 		fetchPlanets();
+		fetchStarships()
 	}, [])
 
 
@@ -37,6 +47,7 @@ function App() {
 				<Route path="people" element={<People data={people} />} />
 				<Route path="/people/:name" element={<Details data={people} />} />
 				<Route path="planets" element={<Planets data={planets} />} />
+				<Route path="starships" element={<Starships data={starships} />} />
 			</Route>
 		</Routes>
 
