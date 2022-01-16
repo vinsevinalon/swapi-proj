@@ -9,7 +9,7 @@ export default function Planets({ data }) {
             <h2>Planets</h2>
         <Row>
             <Col>
-            <Row xs={1} md={4} className="g-4">
+            <Row xs={1} md={5} className="g-4">
                 { data.map((planets, i) => (
                     <Col key={i}>
                     <Card>

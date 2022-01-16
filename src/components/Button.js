@@ -1,19 +1,21 @@
 import React from 'react';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Container, Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 
-export default function Filter({button, filter}) {
+export default function Filter({ button, filter }) {
     return (
-        <>
-            {
-                button.map((gender, i) => {
-                    return <button 
-                        key={i}
-                        type="button" 
-                        onClick={() => filter(gender)}>
-                        {gender}
-                    </button>
-                })
-            }
-        </>
+        <Container>
+            <Col>
+                <ButtonGroup>
+                    {button.map((gender, i) => {
+                        return (
+                            <Button key={i} type="button">
+                                {gender}
+                            </Button>
+                        );
+                    })}
+                </ButtonGroup>
+                <br />
+            </Col>
+        </Container>
     );
 }

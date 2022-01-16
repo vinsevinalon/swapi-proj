@@ -1,6 +1,10 @@
 # SWAPI PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app contains
+* A home page. 
+* The categories are People, Planets and Starships. 
+* Pagination and Details page are located at People's page.
+* The search functionality are located at Starships page. 
 
 ## Available Scripts
 
