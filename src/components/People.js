@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Pagination  from './Pagination';
+import Filter from './Button';
 import { Container, Row, Col, Card, Accordion } from 'react-bootstrap';
 
 
@@ -19,6 +20,8 @@ export default function People({ data }) {
     return (
         <Container>
             <Col>
+            <h2>People</h2>
+            <Filter />
             <Row xs={1} md={5} className="g-4">
                 { currentPosts.map((people, i) => (
                     <Col key={i}>

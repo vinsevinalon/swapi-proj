@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import Search from './Search';
+
 
 export default function Planets({ data }) {
+
     return (
         <Container>
+        <Search />   
         <Row>
             <Col>
             <Row xs={1} md={4} className="g-4">
