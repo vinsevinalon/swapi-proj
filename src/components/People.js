@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Pagination  from './Pagination';
 import Filter from './Button';
-import { Container, Row, Col, Card, Accordion } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Container, Row, Col, Card, Accordion, Nav } from 'react-bootstrap';
 
 
 export default function People({ data }) {
@@ -22,7 +23,7 @@ export default function People({ data }) {
             <Col>
             <h2>People</h2>
             <Filter />
-            <Row xs={1} md={5} className="g-4">
+            <Row xs={1} md={4} className="g-4">
                 { currentPosts.map((people, i) => (
                     <Col key={i}>
                     <Card>
@@ -36,19 +37,8 @@ export default function People({ data }) {
                             <Card.Text>{people.birth_year}</Card.Text>
                             <Card.Subtitle>Mass</Card.Subtitle>
                             <Card.Text>{people.mass}</Card.Text>
-                            <Accordion>
-                                <Accordion.Item eventKey="0">
-                                <Accordion.Header>More details</Accordion.Header>
-                                <Accordion.Body>
-                                    <Card.Subtitle>Hair Color</Card.Subtitle>
-                                    <Card.Text>{people.hair_color}</Card.Text>
-                                    <Card.Subtitle>Skin Color</Card.Subtitle>
-                                    <Card.Text>{people.skin_color}</Card.Text>
-                                    <Card.Subtitle>Eye Color</Card.Subtitle>
-                                    <Card.Text>{people.eye_color}</Card.Text>
-                                </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
+                            <Card.Link as={Link} to={`/people/${people.name}`}>More Details</Card.Link>
+
                         </Card.Body>
                     </Card>
                     </Col>

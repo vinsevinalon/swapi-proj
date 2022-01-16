@@ -4,6 +4,7 @@ import Menu from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import People from './components/People';
+import Details from './components/Details';
 import Planets from './components/Planets';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 			<Route path="/" element={<Menu />}>
 				<Route index element={<Home />} />
 				<Route path="people" element={<People data={people} />} />
+				<Route path="/people/:name" element={<Details data={people} />} />
 				<Route path="planets" element={<Planets data={planets} />} />
 			</Route>
 		</Routes>
