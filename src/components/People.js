@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Pagination from './Pagination';
-import Filter from './Button';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
