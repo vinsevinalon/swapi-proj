@@ -20,8 +20,8 @@ export default function People({ data }) {
 
     return (
         <Container>
-            <Col>
             <h2>People</h2>
+            <Col>
             <Filter />
             <Row xs={1} md={4} className="g-4">
                 { currentPosts.map((people, i) => (

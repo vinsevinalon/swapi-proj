@@ -7,6 +7,7 @@ export default function Planets({ data }) {
 
     return (
         <Container>
+            <h2>Planets</h2>
         <Search />   
         <Row>
             <Col>
