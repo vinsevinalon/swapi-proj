@@ -14,7 +14,7 @@ export default function Starships({ data }) {
                 onChange={(e) => setSearchTerm(e.target.value)} />
                 <br />
             <Col>
-                <Row xs={1} md={4} className="g-4">
+                <Row xs={1} md={5} className="g-4">
                     {data.filter(
                         (data) => 
                         data.name
@@ -22,7 +22,7 @@ export default function Starships({ data }) {
                             .includes(searchTerm.toLowerCase()))
                         .map((starships, i) => (
                         <Col key={i}>
-                            <Card>
+                            <Card style={{ width: '16rem', height: '21rem' }}>
                                 <Card.Body>
                                     <Card.Title>{starships.name}</Card.Title>
                                     <Card.Subtitle>Model</Card.Subtitle>

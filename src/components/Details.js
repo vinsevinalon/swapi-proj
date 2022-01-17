@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { Routes, Route, Link, Outlet, useParams, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
     Container,
     Row,
     Col,
     Card,
-    Accordion,
-    Button,
-    Nav,
 } from 'react-bootstrap';
 
 export default function Details({ data }) {

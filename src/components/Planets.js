@@ -12,7 +12,7 @@ export default function Planets({ data }) {
             <Row xs={1} md={5} className="g-4">
                 { data.map((planets, i) => (
                     <Col key={i}>
-                    <Card>
+                    <Card style={{ width: '16rem', height: '20rem' }} bg='dark' text='light' border='dark'>
                         <Card.Body>
                         <Card.Title>{planets.name}</Card.Title>
                             <Card.Subtitle>Rotation Period</Card.Subtitle>
