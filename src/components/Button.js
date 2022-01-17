@@ -8,8 +8,11 @@ export default function Filter({ button, filter }) {
                 <ButtonGroup>
                     {button.map((gender, i) => {
                         return (
-                            <Button key={i} type="button">
-                                {gender}
+                            <Button 
+                                key={i} 
+                                type="button"
+                                onClick={() => filter('male')}>
+                                Male
                             </Button>
                         );
                     })}

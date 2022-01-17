@@ -13,6 +13,7 @@ export default function Details({ data }) {
 
     return (
         <Container>
+            <br />
             <Row className="g-4">
                 {data
                     .filter((people) => people.name === name)

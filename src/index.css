@@ -3,7 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/69d05a133806535.61c61f6b15899.jpg") !important;
+  background-image: url("assets/homepage.png") !important;
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 100vh; /* You must set a specified height */
   background-position: center; /* Center the image */

@@ -1,27 +1,42 @@
 import React, { useState } from 'react';
-import Pagination from './Pagination';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, ButtonGroup } from 'react-bootstrap';
 
 export default function People({ data }) {
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(5);
-
-    //Get current posts.
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
-
-    // Change page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const [people, setPeople] = useState(data);
+    const filterItem = (genderItem) => {
+        const updatedGender = data.filter((data) => {
+            return data.gender === genderItem;
+        });
+        setPeople(updatedGender);
+    };
     return (
         <Container>
             <h2>People</h2>
-            <Col>
+            <ButtonGroup aria-label="Basic example" style={{ margin: '10px'}}>
+                <Button
+                    className="btn btn-warning"
+                    onClick={() => filterItem('male')}
+                >
+                    Male
+                </Button>
+                <Button
+                    className="btn btn-warning"
+                    onClick={() => filterItem('n/a')}
+                >
+                    N/A
+                </Button>
+                <Button
+                    className="btn btn-warning"
+                    onClick={() => filterItem('female')}
+                >
+                    Female
+                </Button>
+            </ButtonGroup>
                 <Row xs={1} md={4} className="g-4">
-                    {currentPosts.map((people, i) => (
+                    { people.map((people, i) => (
                         <Col key={i}>
-                            <Card>
+                            <Card style={{ width: '16rem', height: '20rem' }}>
                                 <Card.Body>
                                     <Card.Title>{people.name}</Card.Title>
                                     <Card.Subtitle>Height</Card.Subtitle>
@@ -43,13 +58,6 @@ export default function People({ data }) {
                         </Col>
                     ))}
                 </Row>
-            </Col>
-            <Pagination
-                className="pagination"
-                postsPerPage={postsPerPage}
-                totalPosts={data.length}
-                paginate={paginate}
-            />
         </Container>
     );
 }
