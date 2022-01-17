@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Menu from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import People from './components/People';
+import Home from './pages/Home';
+import People from './pages/People';
 import Details from './components/Details';
-import Planets from './components/Planets';
-import Starships from './components/Starships';
+import Planets from './pages/Planets';
+import Starships from './pages/Starships';
 
 function App() {
 	const [ people, setPeople ] = useState([]);

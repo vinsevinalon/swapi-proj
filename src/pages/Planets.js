@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import Pagination from './Pagination';
+import Pagination from '../components/Pagination';
 
 
 
