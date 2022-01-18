@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 
 export default function Menu() {
