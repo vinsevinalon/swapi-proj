@@ -7,6 +7,8 @@ import People from './pages/People';
 import Details from './components/Details';
 import Planets from './pages/Planets';
 import Starships from './pages/Starships';
+import Stories from './pages/Stories';
+import axios from 'axios';
 
 function App() {
 	const [ people, setPeople ] = useState([]);
@@ -15,27 +17,17 @@ function App() {
 
 	
 	useEffect(() => {
-		async function fetchPeople() {
-			let res = await fetch('https://swapi.py4e.com/api/people');
-			let data = await res.json();
-			setPeople(data.results)
-		}
+		axios.get('https://swapi.dev/api/people/').then((res) => {
+			setPeople(res.data.results);
+		});
 
-		async function fetchPlanets() {
-			let res = await fetch('https://swapi.py4e.com/api/planets');
-			let data = await res.json();
-			setPlanets(data.results);
-		}
+		axios.get('https://swapi.dev/api/planets/').then((res) => {
+			setPlanets(res.data.results);
+		});
 
-		async function fetchStarships() {
-			let res = await fetch('https://swapi.py4e.com/api/starships');
-			let data = await res.json();
-			setStarships(data.results);
-		}
-
-		fetchPeople();
-		fetchPlanets();
-		fetchStarships()
+		axios.get('https://swapi.dev/api/starships/').then((res) => {
+			setStarships(res.data.results);
+		});
 	}, [])
 
 
@@ -48,6 +40,7 @@ function App() {
 				<Route path="/people/:name" element={<Details data={people} />} />
 				<Route path="planets" element={<Planets data={planets} />} />
 				<Route path="starships" element={<Starships data={starships} />} />
+				<Route path="stories" element={<Stories />} />
 			</Route>
 		</Routes>
 

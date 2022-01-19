@@ -26,6 +26,9 @@ export default function Menu() {
                                 <Nav.Link as={Link} to="/starships">
                                     Starships
                                 </Nav.Link>
+								<Nav.Link as={Link} to="/stories">
+                                    Stories
+                                </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
