@@ -45,7 +45,7 @@ class AddComment extends React.Component {
             <>
                 <h2>What is your favourite Star Wars moment?</h2>
                 <Container>
-                    <Card style={{ width: '25rem' }} style={{ padding: '10px'}}>
+                    <Card style={{ width: '25rem', padding: '10px' }}>
                         <Form>
                             <Form.Group
                                 className="mb-3"

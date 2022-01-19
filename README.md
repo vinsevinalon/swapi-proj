@@ -1,10 +1,12 @@
 # SWAPI PROJECT
 
 This app contains
-* A home page. 
+* home page. 
 * The categories are People, Planets and Starships. 
-* Pagination and Details page are located at People's page.
+* Filter function is located at Peoples page.
+* Pagination and Details page are located at Planets's page.
 * The search functionality are located at Starships page. 
+* Additional Stories page form for users favorite Star Wars moment. 
 
 ## Available Scripts
 
