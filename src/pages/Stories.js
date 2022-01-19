@@ -1,37 +1,47 @@
 import React from 'react';
-import { Container, Form, Col, Button, Card } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
-export default function Stories() {
+import CommentSection from '../components/StoriesSection';
+import AddComment from '../components/StoriesForm';
+
+import { addComment, removeComment } from '../redux/actions';
+
+import { Container, Row, Col } from 'react-bootstrap';
+
+let Stories = (props) => {
+    const { addComment, comments, removeComment } = props;
+
     return (
         <Container>
-            <Col>
-                <Card style={{ width: '18rem',height: '20rem' }}>
-                    <Card.Body>
-                        <Form>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="exampleForm.ControlInput1"
-                            >
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    placeholder="name@example.com"
-                                />
-                            </Form.Group>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="exampleForm.ControlTextarea1"
-                            >
-                                <Form.Label>Example textarea</Form.Label>
-                                <Form.Control as="textarea" rows={3} />
-                            </Form.Group>
-                        </Form>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Card.Body>
-                </Card>
-            </Col>
+            <Row>
+                <Col>
+                    <AddComment addComment={addComment} />
+                </Col>
+                <Col>
+                    <CommentSection
+                        comments={comments}
+                        removeComment={removeComment}
+                    />
+                </Col>
+            </Row>
         </Container>
     );
-}
+};
+
+const mapStateToProps = (state) => {
+    return {
+        comments: state,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addComment: (name, date, comment) =>
+            dispatch(addComment(name, date, comment)),
+        removeComment: (id) => dispatch(removeComment(id)),
+    };
+};
+
+Stories = connect(mapStateToProps, mapDispatchToProps)(Stories);
+
+export default Stories;

@@ -4,11 +4,11 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background-image: url("assets/homepage.png") !important;
-  background-color: #cccccc; /* Used if the image is unavailable */
+  background-color: #f7f3e7; /* Used if the image is unavailable */
   height: 100vh; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  top: 50px;
+
   background-size: cover; 
 }
 
