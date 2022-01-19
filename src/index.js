@@ -14,7 +14,6 @@ import { loadState, saveState } from './localStorage/localStorage';
 const persistedState = loadState();
 
 const store = createStore(comments, persistedState);
-console.log(store.getState());
 
 store.subscribe(() => {
     saveState(store.getState());
